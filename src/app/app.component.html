@@ -1,0 +1,27 @@
+<div id="wrapper" style="min-height: 100%;">
+  
+    <!-- Content Header (Page header) -->
+    <header id="header" class="main-header w-100 h-10 shadow-5">
+      <app-top-navbar></app-top-navbar>
+    </header>
+  
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper h-100">
+      <div class="content">
+        <div id="content-card" class="card d-flex flex-row justify-content-around mx-5 my-5 p-3 shadow-1">
+          <div class="card w-45 p-2">
+            <app-new-member-form></app-new-member-form>
+          </div>
+          <div id="members-list" class="card w-45 p-2" style="max-height: 50%; overflow-y: scroll">
+            <app-members-list></app-members-list>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Content Footer (Page footer) -->
+      <div id="footer" class="card p-3 w-100 h-10 d-flex flex-row justify-content-between">
+        <div>Copyrigth</div>
+        <div>All rights reserved</div>
+      </div>
+  </div>

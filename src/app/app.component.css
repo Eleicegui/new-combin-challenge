@@ -1,0 +1,23 @@
+.content-wrapper {
+    padding-top: 57px;
+}
+
+#members-list::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+#members-list::-webkit-scrollbar:vertical {
+    width:10px;
+}
+#members-list::-webkit-scrollbar-button:increment,#members-list::-webkit-scrollbar-button {
+    display: none;
+} 
+#members-list::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+#members-list::-webkit-scrollbar-thumb {
+    background-color: #a1a3a3;
+    border: 2px solid #f3f3f3;
+}
+#members-list::-webkit-scrollbar-track {
+    border-radius: 10px;   
+}

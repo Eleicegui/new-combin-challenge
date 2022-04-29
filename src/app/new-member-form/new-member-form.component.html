@@ -1,0 +1,78 @@
+<div *ngIf="member_form">
+    <form [formGroup]="member_form">
+        <div class="row">
+            <div class="col-sm-12">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>First Name</mat-label>
+                    <input matInput type="text" name="firstName" formControlName="firstName"
+                        required placeholder="Rodrigo" required>
+                    <mat-error
+                        *ngIf="member_form.controls.firstName?.errors?.required && member_form.controls.firstName.touched">
+                        New member's first name is required
+                    </mat-error>
+                    <mat-error *ngIf="!member_form.controls.firstName.errors?.required && member_form.controls.firstName.errors?.trimmedLength">
+                        The first name must be at least 2 characters long without the empty spaces around
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput type="text" name="lastName" formControlName="lastName"
+                        required placeholder="Cabral" required>
+                    <mat-error
+                        *ngIf="member_form.controls.lastName?.errors?.required && member_form.controls.lastName.touched">
+                        New member's last name is required
+                    </mat-error>
+                    <mat-error *ngIf="!member_form.controls.lastName.errors?.required && member_form.controls.lastName.errors?.trimmedLength">
+                        The last name must be at least 2 characters long without the empty spaces around
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Adress</mat-label>
+                    <input matInput type="text" name="address" formControlName="address"
+                        required placeholder="Cabildo 4414" required>
+                    <mat-error
+                        *ngIf="member_form.controls.firstName?.errors?.required && member_form.controls.firstName.touched">
+                        New member's adress is required
+                    </mat-error>
+                    <mat-error *ngIf="!member_form.controls.address.errors?.required && member_form.controls.address.errors?.trimmedLength">
+                        The address must be at least 2 characters long without the empty spaces around
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>SSN</mat-label>
+                    <input matInput [textMask]="{mask: ssn_mask}" type="text" name="ssn" placeholder="111-11-1111" formControlName="ssn" autocomplete="off" required>              
+                    <mat-error *ngIf="member_form.controls.ssn?.errors?.required && member_form.controls.ssn.touched">
+                        New member's SSN is required
+                    </mat-error>
+                    <mat-error *ngIf="!member_form.controls.ssn.errors?.required && member_form.controls.ssn.errors?.duplicatedSSN">
+                        This SSN is already registered
+                    </mat-error>
+                    <mat-error *ngIf="!member_form.controls.ssn?.errors?.required && !member_form.controls.ssn.errors?.duplicatedSSN && member_form.controls.ssn.invalid">
+                        New member's SSN is invalid
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row w-100 d-flex justify-content-around">
+            <div matTooltip="Reset form" matTooltipPosition="left">
+                <button mat-raised-button color="warn" (click)="resetForm()">Reset</button>
+            </div>
+            <div [matTooltip]=" member_form.invalid ? 'Disabled due an error on the form' : 'Save new member'" matTooltipPosition="right">
+                <button mat-raised-button color="primary" [disabled]="!member_form.touched || ( member_form.touched && member_form.invalid)" (click)="submitForm(); resetForm()">Save</button>
+            </div>
+        </div>
+    </form>
+</div>

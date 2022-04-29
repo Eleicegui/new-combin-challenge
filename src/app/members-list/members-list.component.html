@@ -1,0 +1,16 @@
+<div class="d-flex flex-row">
+    <div class="col-3 fw-bold">First Name</div>
+    <div class="col-3 fw-bold">Last Name</div>
+    <div class="col-3 fw-bold">Address</div>
+    <div class="col-3 fw-bold">SSN</div>
+</div>
+<hr>
+<div *ngFor="let member of members">
+    <div class="d-flex flex-row justify-content-around">
+        <div class="col-3">{{member.firstName}}</div>
+        <div class="col-3">{{member.lastName}}</div>
+        <div class="col-3">{{member.address}}</div>
+        <div class="col-3">{{member.ssn}}</div>
+    </div>
+    <hr>
+</div>
