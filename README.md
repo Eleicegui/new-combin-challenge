@@ -10,5 +10,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Docker image
 
 A docker image can be pulled from `dockerhub` with the following command: `docker pull eleicegui/new-combin-challenge:eleicegui`.
-.That image is a dockerized version of a production enviroment build of this project.
+That image is a dockerized version of a production enviroment build of this project.
 Run the docker image locally alongside the API with this command `docker run -d -p 80:80 eleicegui`
